@@ -104,6 +104,11 @@ table {
   margin-right: auto;
 }
 
+img {
+  width: 100px;
+  height: 100px;
+}
+
 td button {
   background-color: #fadf63;
   width: 150px;
