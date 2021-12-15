@@ -5,7 +5,8 @@ import styled from 'styled-components'
 class TelaListaDePlaylists extends React.Component {
 
     state = {
-        playlists: []
+        playlists: [],
+        idPlaylist: ''
     }
 
     componentDidMount() {
@@ -17,7 +18,7 @@ class TelaListaDePlaylists extends React.Component {
         let URL= "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists"
         let autorizacao = {
             headers: {
-                authorization: "shirley-almeida-joy"
+                authorization: "heber-souza-joy"
             }
         }
         axios.get(URL, autorizacao)
@@ -28,10 +29,10 @@ class TelaListaDePlaylists extends React.Component {
     deletePlay = (id) => {
 
         axios.delete(
-          'https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}',
+          `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}`,
           {
             headers:{
-              Authorization: "heber-souza-joy"
+              Authorization: "shirley-almeida-joy"
             }
           }
         )
@@ -48,16 +49,17 @@ class TelaListaDePlaylists extends React.Component {
     render() {
 
         let playListsMap = this.state.playlists.map((playlist)=>{
-            return <p> <strong> Nome:</strong> {playlist.name} <button onClick={() => this.deletePlay(playlist.id)}>x</button><br /> 
-                <strong>ID:</strong> {playlist.id}
+            return <p> <strong> Nome:</strong> {playlist.name} <button onClick={() => this.deletePlay(playlist.id)}>APAGAR</button><br /> 
+              <button>Detalhes da Playlist</button> 
+              <button>Adicionar Música</button>
+                
             </p>
         })
 
         return(
             <div key={playListsMap.id}>
                 <h2>Quantidade de playlists: {playListsMap.length}</h2>
-
-                <p> {playListsMap} </p>
+                 <p> {playListsMap} </p>
             </div>
         )
     }

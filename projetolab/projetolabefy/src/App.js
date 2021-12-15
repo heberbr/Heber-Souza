@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
+import axios from 'axios';
 import TelaCriarPlaylists from './components/TelaCriarPlaylists';
 import TelaListaDePlaylists from './components/TelaListaDePlaylists';
+import AdicionaMusica from './components/AdicionaMusica';
 
 class App extends React.Component {
   state  = {
@@ -11,7 +13,7 @@ class App extends React.Component {
     mudaCondicionalDeLista =  () => {
       this.state.mostraPlaylists ? this.setState({mostraPlaylists: false}) : this.setState({mostraPlaylists: true})
       }
-
+           
 
   render(){
 
@@ -28,6 +30,7 @@ class App extends React.Component {
         <br/><hr />
         <br/><button onClick={this.mudaCondicionalDeLista}>Mostrar/Esconder Playlists</button>
         {mostraLista}
+        <AdicionaMusica/>
       </div>
 
   );
