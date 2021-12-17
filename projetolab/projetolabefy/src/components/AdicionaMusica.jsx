@@ -25,8 +25,8 @@ class AdicionaMusica extends React.Component {
      }
 
 
-    AdicionaMusica = (id) => {
-        let URL = `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}/tracks`
+    adicionaMusica = (id) => {
+        let URL = `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${this.props.idPlaylist}/tracks`
     
         let body = {
             name: this.state.nomeMusica,
@@ -48,8 +48,8 @@ class AdicionaMusica extends React.Component {
       }
 
     render() {
-    // let musicaMap = this.state.listaMusicas.map((musica)=>{
-    // return <p> <strong> Nome:</strong> {listaMusicas.name} {listaMusicas.artist} {listaMusicas.url}<button onClick={() => this.AdicionaMusica(musica.id)}></button><br /> 
+
+    console.log(this.props.idPlaylist) 
     return (
 
     <div>
