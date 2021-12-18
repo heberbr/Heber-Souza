@@ -49,7 +49,7 @@ class AdicionaMusica extends React.Component {
 
     render() {
 
-    console.log(this.props.idPlaylist) 
+    console.log('x',this.props.idPlaylist) 
     return (
 
     <div>
@@ -58,7 +58,7 @@ class AdicionaMusica extends React.Component {
             <input placeholder="Nome da Música" value={this.state.nomeMusica} onChange={this.mudaMusicaInput} />
             <input placeholder="Nome do Artista" value={this.state.nomeArtista} onChange={this.mudaArtistaInput} />
             <input placeholder="Link" value={this.state.urlMusica} onChange={this.mudaUrlInput} />
-            <button onClick={this.AdicionaMusica}>Adicionar</button>
+            <button onClick={this.adicionaMusica}>Adicionar</button>
         </div>
       </div>)
 }

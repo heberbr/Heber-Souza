@@ -11,7 +11,7 @@ class DetalhesPlay extends React.Component {
     return (
 
     <div>
-       TESTE
+       Heber Souza
       </div>)
 }
 
