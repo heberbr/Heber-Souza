@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -18,21 +17,21 @@ const Container = styled.div`
 const Imagem = styled.img`
   width: 200px;
 `;
-const rosto = styled.img`
+const Rosto = styled.img`
   width: 35px;
 `;
 
 function Cabeca() {
-  const [mudaTela, setmudaTela] = useState(false);
+  const [mudaTela, setMudaTela] = useState(false);
 
   return (
     <div>
       <div>
-        <Imagem src="/public/img/astromatch.jpeg" />
+        <Imagem src="/public/img/astromatch" />
       </div>
 
       {mudaTela ? (
-        setmudaTela(
+        setMudaTela(
           <Container>
             <div>
               <rosto src="/public/img/astromatch.jpeg" />
@@ -41,7 +40,7 @@ function Cabeca() {
         )
       ) : (
         <div>
-          <rosto src="/img/rosto.jpeg" />
+          <rosto src="/publi/img/rosto.jpeg" />
         </div>
       )}
     </div>
