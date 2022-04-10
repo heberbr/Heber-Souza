@@ -1,57 +1,60 @@
-export type user = {
-    id: number,
-    name: string,
-    email: string,
-    type: UserType,
+export const Errors: { [chave: string]: { status: number, message: string } } = {
+    AUTHORIZATION_NOT_FOUND: { status: 401, message: "Você nao está autenticado." },
+    USER_NOT_FOUND: { status: 404, message: "Não foi encontrado nenhum usuário com os dados informados." },
+    USER_EXISTS: { status: 409, message: "Esse usuário já existe" },
+    MISSING_PARAMETERS: { status: 422, message: "Verifique se está passando todas as informações necessárias" },
+    SOMETHING_WENT_WRONG: { status: 500, message: "Ops, Algo deu errado." },
+    BAD_REQUEST: { status: 400, message: "Requisição inválido" }
+}
+
+export type transaction = {
+    service: string;
+    date: string
+}
+
+export type user  = {
+    name: string;
+    cpf: number
     age: number
+    balance: number
+    BankStatement: Array<transaction>
 }
 
-enum UserType {
-    ADMIN = "ADMIN",
-    NORMAL = "NORMAL"
-}
+export const userList : Array<user> = [
 
-export let users = [
-    {
-        id: 1,
-        name: "Alice",
-        email: "alice@email.com",
-        type: UserType.ADMIN,
-        age: 12
+    { 
+        name: "Joao Gonçalves Neto",
+        cpf: 11987788552,
+        age: 28,
+        balance: 1500,
+        BankStatement: []
     },
     {
-        id: 2,
-        name: "Bob",
-        email: "bob@email.com",
-        type: UserType.NORMAL,
-        age: 36
+        name: "Maria Adonilda Martins",
+        cpf: 12281788530,
+        age: 48,
+        balance: 2500,
+        BankStatement: []
     },
     {
-        id: 3,
-        name: "Coragem",
-        email: "coragem@email.com",
-        type: UserType.NORMAL,
-        age: 21
+        name: "Lucia Ferreira",
+        cpf: 58214554151,
+        age: 30,
+        balance: 22000,
+        BankStatement: []
     },
     {
-        id: 4,
-        name: "Dory",
-        email: "dory@email.com",
-        type: UserType.NORMAL,
-        age: 17
+        name: "Pablo Henrique Silva",
+        cpf: 25876925489,
+        age: 31,
+        balance: 7500,
+        BankStatement: []
     },
     {
-        id: 5,
-        name: "Elsa",
-        email: "elsa@email.com",
-        type: UserType.ADMIN,
-        age: 17
-    },
-    {
-        id: 6,
-        name: "Fred",
-        email: "fred@email.com",
-        type: UserType.ADMIN,
-        age: 60
+        name: "Enzo Grabriel Monteiro",
+        cpf: 25496358946,
+        age: 18,
+        balance: 1200,
+        BankStatement: []
     }
-]
+] 
